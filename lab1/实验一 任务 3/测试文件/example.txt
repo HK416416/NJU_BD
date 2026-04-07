@@ -1,0 +1,3 @@
+hadoop is a big data framework
+I love hadoop
+hadoop hadoop hadoop

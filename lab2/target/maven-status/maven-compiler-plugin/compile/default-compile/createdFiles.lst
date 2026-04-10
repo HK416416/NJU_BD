@@ -1,0 +1,11 @@
+Task1Combiner.class
+Task1Reducer.class
+Task1Mapper.class
+SortMapper.class
+Task1Driver.class
+Task3SegmentMapper.class
+Task2MapperWithStopWords.class
+StopWordLoader.class
+Task3SegmentDriver.class
+SortReducer.class
+Task2Driver.class

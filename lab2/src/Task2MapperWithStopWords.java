@@ -16,7 +16,7 @@ public class Task2MapperWithStopWords extends Mapper<LongWritable, Text, Text, T
         try {
             stopWords = StopWordLoader.load(ctx.getConfiguration(), stopPath);
         } catch (Exception e) {
-            stopWords = new HashSet<>();   // 修改这里
+            stopWords = new HashSet<>();   
         }
     }
     @Override

@@ -1,0 +1,26 @@
+倒排索引实验 – 执行说明
+学号：231220069
+
+一、数据路径（HDFS）
+输入：/user/231220069a/Exp2/task1&2/
+
+停用词表：/user/231220069a/Exp2/hit_stopwords.txt
+
+任务三小说：/user/231220069a/Exp2/task3/
+
+二、执行命令
+任务一（无停用词）
+bash
+hadoop jar inverted-index-1.0-jar-with-dependencies.jar Task1Driver "/user/231220069a/Exp2/task1&2" /user/231220069a/output_task1
+任务二（带停用词）
+bash
+hadoop jar inverted-index-1.0-jar-with-dependencies.jar Task2Driver "/user/231220069a/Exp2/task1&2" /user/231220069a/output_task2 /user/231220069a/Exp2/hit_stopwords.txt
+任务三（分词，选做）
+bash
+hadoop jar inverted-index-1.0-jar-with-dependencies.jar Task3SegmentDriver /user/231220069a/Exp2/task3 /user/231220069a/output_segmented
+对分词结果执行倒排索引
+bash
+hadoop jar inverted-index-1.0-jar-with-dependencies.jar Task1Driver /user/231220069a/output_segmented /user/231220069a/output_task3_result
+三、查看结果（头20行）
+bash
+hdfs dfs -cat /user/231220069a/output_task1/part-r-00000 | head -20

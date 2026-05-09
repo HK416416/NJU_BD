@@ -1,0 +1,21 @@
+create 'user_profile', 'base_info', 'social_stats'
+
+put 'user_profile', 'u001', 'base_info:name', 'ZhangSan'
+put 'user_profile', 'u001', 'base_info:age', '25'
+put 'user_profile', 'u001', 'base_info:sex', 'male'
+put 'user_profile', 'u001', 'social_stats:followers', '1200'
+
+put 'user_profile', 'u002', 'base_info:name', 'LiSi'
+put 'user_profile', 'u002', 'social_stats:followers', '850'
+
+put 'user_profile', 'u003', 'base_info:name', 'WangWu'
+put 'user_profile', 'u003', 'base_info:age', '30'
+put 'user_profile', 'u003', 'base_info:sex', 'female'
+
+scan 'user_profile', {COLUMNS => 'social_stats'}
+
+put 'user_profile', 'u001', 'base_info:phone', '13800138000'
+get 'user_profile', 'u001', 'base_info:phone'
+
+disable 'user_profile'
+drop 'user_profile'
